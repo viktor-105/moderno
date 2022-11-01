@@ -22,6 +22,7 @@ import webpack from 'webpack-stream';
 import ftp from 'vinyl-ftp';
 import gutil from 'gulp-util';
 import * as nodePath from 'path';
+import mixitup from 'mixitup';
 
 const projectName = 'dist';
 const srcFolder = "src";
