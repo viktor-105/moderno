@@ -1,5 +1,5 @@
-//----- Импорт зависимостей ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-import { isMobile, _slideUp, _slideDown, _slideToggle } from "../files/functions.js";
+// Подключение функционала "Чертогов Фрилансера"
+import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../files/functions.js";
 import { formValidate } from "../files/forms/forms.js";
 
 // Подключение файла стилей
@@ -44,7 +44,7 @@ export class SelectConstructor {
 	constructor(props, data = null) {
 		let defaultConfig = {
 			init: true,
-			logging: false,
+			logging: true,
 		}
 		this.config = Object.assign(defaultConfig, props);
 		// CSS классы модуля
@@ -81,7 +81,7 @@ export class SelectConstructor {
 				this.selectsInit(selectItems);
 				this.setLogging(`Проснулся, построил селектов: (${selectItems.length})`);
 			} else {
-				this.setLogging('Нет ни одного select. Сплю...zzZZZzZZz...');
+				this.setLogging('Сплю, нет ни одного select zzZZZzZZz');
 			}
 		}
 	}
@@ -101,24 +101,23 @@ export class SelectConstructor {
 		selectItems.forEach((originalSelect, index) => {
 			this.selectInit(originalSelect, index + 1);
 		});
-		const _this = this;
 		// Обработчики событий...
 		// ...при клике
 		document.addEventListener('click', function (e) {
-			_this.selectsActions(e);
-		});
+			this.selectsActions(e);
+		}.bind(this));
 		// ...при нажатии клавиши
 		document.addEventListener('keydown', function (e) {
-			_this.selectsActions(e);
-		});
+			this.selectsActions(e);
+		}.bind(this));
 		// ...при фокусе
 		document.addEventListener('focusin', function (e) {
-			_this.selectsActions(e);
-		});
+			this.selectsActions(e);
+		}.bind(this));
 		// ...при потере фокуса
 		document.addEventListener('focusout', function (e) {
-			_this.selectsActions(e);
-		});
+			this.selectsActions(e);
+		}.bind(this));
 	}
 	// Функция инициализации конкретного селекта
 	selectInit(originalSelect, index) {
@@ -460,7 +459,7 @@ export class SelectConstructor {
 	}
 	// Логгинг в консоль
 	setLogging(message) {
-		this.config.logging ? console.log(`[select]: ${message}`) : null;
+		this.config.logging ? FLS(`[select]: ${message}`) : null;
 	}
 }
 

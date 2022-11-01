@@ -6,7 +6,7 @@ import zip from 'gulp-zip';
 import autoprefixer from 'gulp-autoprefixer';
 import group_media from 'gulp-group-css-media-queries';
 import plumber from 'gulp-plumber';
-import del from 'del';
+import {deleteAsync} from 'del';
 import rename from 'gulp-rename';
 import clean_css from 'gulp-clean-css';
 import newer from 'gulp-newer';
@@ -57,7 +57,7 @@ const ftpConnect = ftp.create(configFTP);
 
 // Функция очистки папки с результатом
 function clean() {
-	return del(path.clean);
+	return deleteAsync(path.clean);
 }
 // Вспомогательная функция
 function cb() { }
@@ -83,7 +83,7 @@ function addGitIgnore() {
 // Шрифты
 // Удаляем папку со шрифтами
 function fontsFoldrClean() {
-	return del(path.build.fonts);
+	return deleteAsync(path.build.fonts);
 }
 // Конвертируем из .ttf в .woff и .woff2
 function fontsConverter() {

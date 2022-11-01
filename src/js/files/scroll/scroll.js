@@ -1,21 +1,15 @@
-// Импорт функционала ====================================================================================================================================================================================================================================================================================================
-// Вспомогательные функции.
-import { isMobile } from "../functions.js";
+// Подключение функционала "Чертогов Фрилансера"
+import { isMobile, getHash } from "../functions.js";
 // Импорт класса наблюдателя.
 import { ScrollWatcher } from "../../libs/watcher.js";
-// Модуль прокрутки к блоку (раскомментировать при использовании)
+// Модуль прокрутки к блоку
 import { gotoBlock } from "./gotoblock.js";
-//
+// Переменная контроля добавления события window scroll.
 let addWindowScrollEvent = false;
 //====================================================================================================================================================================================================================================================================================================
-
-// Запуск наблюдателя
-// Создание дополнительной обработки элемента
-// Требует импорта ScrollWatcher
-export function scrollWatcher(logging = false) {
-	new ScrollWatcher({
-		logging: logging
-	});
+// Наблюдатель
+export function scrollWatcher() {
+	new ScrollWatcher({});
 }
 // Плавная навигация по странице
 export function pageNavigation() {
@@ -32,9 +26,10 @@ export function pageNavigation() {
 			const targetElement = e.target;
 			if (targetElement.closest('[data-goto]')) {
 				const gotoLink = targetElement.closest('[data-goto]');
+				const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : '';
 				const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
 				const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : '500';
-				gotoBlock(`#${gotoLink.dataset.goto}`, noHeader, gotoSpeed);
+				gotoBlock(gotoLinkSelector, noHeader, gotoSpeed);
 				e.preventDefault();
 			}
 		} else if (e.type === "watcherCallback") {
@@ -94,21 +89,70 @@ export function headerScroll() {
 		scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
 	});
 }
-// Прилипающий блок (в работе)
+// Прилипающий блок
 export function stickyBlock() {
 	addWindowScrollEvent = true;
-	const stickyParents = document.querySelectorAll('[data-sticky]');
-	if (stickyParents.length) {
+	// data-sticky для родителя внутри которого прилипает блок *
+	// data-sticky-header для родителя, учитываем высоту хедера
+	// data-sticky-top="" для родителя, можно указать отступ сверху
+	// data-sticky-bottom="" для родителя, можно указать отступ снизу
+	// data-sticky-item для прилипающего блока *
+	function stickyBlockInit() {
+		const stickyParents = document.querySelectorAll('[data-sticky]');
+		if (stickyParents.length) {
+			stickyParents.forEach(stickyParent => {
+				let stickyConfig = {
+					top: stickyParent.dataset.stickyTop ? parseInt(stickyParent.dataset.stickyTop) : 0,
+					bottom: stickyParent.dataset.stickyBottom ? parseInt(stickyParent.dataset.stickyBottom) : 0,
+					header: stickyParent.hasAttribute('data-sticky-header') ? document.querySelector('header.header').offsetHeight : 0
+				}
+				stickyBlockItem(stickyParent, stickyConfig);
+			});
+		}
+	}
+	function stickyBlockItem(stickyParent, stickyConfig) {
+		const stickyBlockItem = stickyParent.querySelector('[data-sticky-item]');
+		const headerHeight = stickyConfig.header;
+		const offsetTop = headerHeight + stickyConfig.top;
+		const startPoint = stickyBlockItem.getBoundingClientRect().top + scrollY - offsetTop;
 		document.addEventListener("windowScroll", function (e) {
-			console.log(scrollY);
+			const endPoint = (stickyParent.offsetHeight + stickyParent.getBoundingClientRect().top + scrollY) - (offsetTop + stickyBlockItem.offsetHeight + stickyConfig.bottom);
+			let stickyItemValues = {
+				position: "relative",
+				bottom: "auto",
+				top: "0px",
+				left: "0px",
+				width: "auto"
+			}
+			if (offsetTop + stickyConfig.bottom + stickyBlockItem.offsetHeight < window.innerHeight) {
+				if (scrollY >= startPoint && scrollY <= endPoint) {
+					stickyItemValues.position = `fixed`;
+					stickyItemValues.bottom = `auto`;
+					stickyItemValues.top = `${offsetTop}px`;
+					stickyItemValues.left = `${stickyBlockItem.getBoundingClientRect().left}px`;
+					stickyItemValues.width = `${stickyBlockItem.offsetWidth}px`;
+				} else if (scrollY >= endPoint) {
+					stickyItemValues.position = `absolute`;
+					stickyItemValues.bottom = `${stickyConfig.bottom}px`;
+					stickyItemValues.top = `auto`;
+					stickyItemValues.left = `0px`;
+					stickyItemValues.width = `${stickyBlockItem.offsetWidth}px`;
+				}
+			}
+			stickyBlockType(stickyBlockItem, stickyItemValues);
 		});
 	}
+	function stickyBlockType(stickyBlockItem, stickyItemValues) {
+		stickyBlockItem.style.cssText = `position:${stickyItemValues.position};bottom:${stickyItemValues.bottom};top:${stickyItemValues.top};left:${stickyItemValues.left};width:${stickyItemValues.width};`;
+	}
+	stickyBlockInit();
 }
-
+// При подключении модуля обработчик события запустится автоматически
 setTimeout(() => {
 	if (addWindowScrollEvent) {
+		let windowScroll = new Event("windowScroll");
 		window.addEventListener("scroll", function (e) {
-			document.dispatchEvent(new Event("windowScroll"));
+			document.dispatchEvent(windowScroll);
 		});
 	}
 }, 0);

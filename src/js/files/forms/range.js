@@ -1,18 +1,20 @@
 // Подключение из node_modules
-import noUiSlider from 'nouislider';
+import * as noUiSlider from 'nouislider';
 
-// Подключение стилей из scss/libs в файле scss/forms/forms.scss
+// Подключение стилей из scss/base/forms/range.scss 
+// в файле scss/forms/forms.scss
+
 // Подключение cтилей из node_modules
-// import 'nouislider/dist/nouislider.min.css';
+// import 'nouislider/dist/nouislider.css';
 
-export function range() {
-	const priceSlider = document.querySelector('.ul-slider');
+export function rangeInit() {
+	const priceSlider = document.querySelector('#range');
 	if (priceSlider) {
 		let textFrom = priceSlider.getAttribute('data-from');
 		let textTo = priceSlider.getAttribute('data-to');
 		noUiSlider.create(priceSlider, {
-			start: [0, 200000],
-			connect: true,
+			start: 0, // [0,200000]
+			connect: [true, false],
 			range: {
 				'min': [0],
 				'max': [200000]
@@ -37,3 +39,4 @@ export function range() {
 		}
 	}
 }
+rangeInit();
