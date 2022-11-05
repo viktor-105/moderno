@@ -2,8 +2,9 @@
 // Снипет (HTML): rating
 .rating {
 	display: flex;
-	align-items: flex-end;
-	font-size: 40px;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 14px;
 	line-height: 0.75;
 	transition: opacity 0.3s ease 0s;
 }
@@ -54,7 +55,7 @@
 	opacity: 0;
 }
 .rating__value {
-	font-size: 50%;
+	font-size: 12px;
 	line-height: 1;
-	padding: 0px 0px 0px 10px;
+	padding: 0px 3px 0px 10px;
 }

@@ -93,7 +93,7 @@ import * as flsForms from "./files/forms/forms.js";
 // flsForms.formViewpass();
 
 /* Модуль звездного рейтинга */
-// flsForms.formRating();
+ flsForms.formRating();
 
 /* Модуль работы с select. */
 //flsForms.formSelect();

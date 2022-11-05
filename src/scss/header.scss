@@ -329,7 +329,19 @@
 		color: $grey;			
 	}
 }
-
+.rating__num {
+	max-width: 25px;
+	display: flex;
+	align-items: center;
+}
+.rating__bracket-left {
+	span {
+		padding-left: 3px;
+		padding-right: -10px;
+		margin-right: -10px;
+		font-size: 12px;
+	}
+}
 
 
 
