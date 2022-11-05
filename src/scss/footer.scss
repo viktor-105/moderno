@@ -1,3 +1,208 @@
-//====================================================================================================
+.footer {
+	background-color: $grey;
 
-//====================================================================================================
+	// .footer__inner
+
+	&__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 100px 0 80px;
+	}
+
+	// .footer__col
+
+	&__col {
+        max-width: 270px;
+        width: 100%;
+        &-menu {
+            max-width: 220px;
+        }
+	}
+
+	// .footer__col-title
+
+	&__col-title {
+        font-size: 22px;
+        font-family: "Raleway";
+        color: #ffffff;
+        font-weight: bold; 
+        padding-bottom: 31px;
+        margin-bottom: 30px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 2px;
+            width: 51px;
+            height: 3px;
+            background-color: $green;
+        }
+	}
+
+	// .footer__col-text
+
+	&__col-text {
+        font-size: 15px;
+        color: #b7c3c8;
+        margin-bottom: 35px;
+	}
+
+	// .footer__col-address
+
+	&__col-address {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+        font-family: "Lato";
+        color: #ffffff;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            display: inline-block;
+            color: $green;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+        }
+	}
+
+	// .footer__col-phone
+
+	&__col-phone {
+        font-size: 14px;
+        font-family: "Lato";
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 1.714;
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            display: inline-block;
+            color: $green;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+        }
+	}
+
+	// .footer__col-list
+
+	&__col-list {
+        li {
+            display: flex;
+        }
+        a {
+            font-size: 15px;
+            color: #b7c3c8;
+            padding-left: 22px;
+            margin-bottom: 16px;
+            position: relative;
+            &::before {
+                content: '\f105';
+                position: absolute;
+                color: $green;
+                left: 0;
+                font-family: 'icons';
+                font-size: 18px;
+            }
+        }     
+	}
+
+	// .footer__form
+
+	&__form {
+        position: relative;
+        input {
+            border: none;
+            border: 1px solid transparent;
+            background: rgb(0,0,0);
+            border-image: linear-gradient(-90deg, rgba(0,0,0,1) 0%, rgba(38,50,56,1) 100%);
+            background-color: #2f3c43;
+            display: block;
+            width: 100%;
+            height: 46px;
+            color: #fff;
+            padding-left: 15px;
+            padding-right: 50px;
+            font-size: 14px;
+            &::placeholder {
+                color: #697378;
+            }
+        }
+        button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $green;
+            height: 46px;
+            width: 43px;
+            &::before {
+                content: '\f124';
+                color: #fff;
+                font-size: 20px;
+                font-family: 'icons';
+                
+            }
+
+        }
+	}
+
+	// .footer__form-title
+
+	&__form-title {
+        font-size: 20px;
+        color: #ffffff; 
+        margin-bottom: 16px;
+	}
+
+	// .footer__copy
+
+	&__copy {
+		border-top: 1px solid #424d53;
+	}
+
+	// .footer__copy-text
+
+	&__copy-text {
+		padding: 25px 0 25px;
+		text-align: center;
+		font-size: 15px;
+		color: #919699;  
+	}
+}
+
+.footer__social-link {
+    margin-bottom: 33px;
+    
+    li {
+        display: inline-block;
+        & + li {
+            margin-left: 7px;
+        }
+    }
+    a {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background-image: url(../img/css_sprites.png);
+    }
+    
+}
+    
+.link-twitter {
+    background-position: -28px 0;
+}
+.link-youtube {
+    background-position: 0 -28px;
+}
+.link-pinterest {
+    background-position: -28px -28px;
+}
+.link-linkedin {
+    background-position: -56px 0;
+}
+
+
+

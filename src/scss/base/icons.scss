@@ -1,0 +1,39 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-map-marker:before {
+	content: "\f041";
+  }
+  ._icon-shopping-cart:before {
+	content: "\f07a";
+  }
+  ._icon-phone:before {
+	content: "\f095";
+  }
+  ._icon-bolt:before {
+	content: "\f0e7";
+  }
+  ._icon-flash:before {
+	content: "\f0e7";
+  }
+  ._icon-angle-right:before {
+	content: "\f105";
+  }
+  ._icon-location-arrow:before {
+	content: "\f124";
+  }
+  
