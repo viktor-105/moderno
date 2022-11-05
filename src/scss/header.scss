@@ -381,6 +381,86 @@
 	background-color: $green;
 }
 
+.advantages {
+	background-color: $grey;
+	padding-top: 120px;
+	padding-bottom: 55px;
+	
+	// .advantages__title
+
+	&__title {
+		color: #ffffff;
+	}
+
+	// .advantages__inner
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	// .advantages__item
+
+	&__item {
+		padding: 40px 25px 60px;
+		max-width: 370px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+
+		&:hover {
+			.advantages__item-img {
+				background-color: $green;
+			}
+			.advantages__item-title {
+				color: $green;
+			}
+			.advantages__item-img {
+				g {
+					fill: #fff;
+					stroke: #fff;
+				}
+				path {
+					fill: #fff;
+				}
+				rect {
+					fill: #fff;
+				}
+			}
+		}
+
+		&-img {
+			width: 114px;
+			height: 114px;
+			background-color: #fff;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			margin-bottom: 25px;
+			transition: all .3s;
+		}
+		&-title {
+			margin-bottom: 20px;
+			font-size: 24px;
+			font-weight: 500;
+			color: #ffffff;  
+			transition: all .3s;
+		}
+		&-text {
+			color: rgb(176, 190, 197);
+			line-height: 1.6;  
+			text-align: center;
+		}
+	
+	}
+	
+}
+
+
 
 
 
