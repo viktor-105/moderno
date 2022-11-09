@@ -15,51 +15,56 @@
 	}
 }
 
+
+//==лупа
 ._icon-search:before {
 	content: "\f002";
   }
+//==конверт
   ._icon-envelope-o:before {
 	content: "\f003";
   }
+//звездочка
   ._icon-star:before {
 	content: "\f005";
   }
+//==человечек
   ._icon-user:before {
 	content: "\f007";
   }
+//==4 квадрата
   ._icon-th-large:before {
 	content: "\f009";
   }
+//==список-меню
   ._icon-th-list:before {
 	content: "\f00b";
   }
+//==крестик
   ._icon-close:before {
 	content: "\f00d";
   }
-  ._icon-remove:before {
-	content: "\f00d";
-  }
-  ._icon-times:before {
-	content: "\f00d";
-  }
+//==замочек
   ._icon-lock:before {
 	content: "\f023";
   }
+//==метка на карте
   ._icon-map-marker:before {
 	content: "\f041";
   }
+//==блокнот
   ._icon-edit:before {
 	content: "\f044";
   }
-  ._icon-pencil-square-o:before {
-	content: "\f044";
-  }
+  //==корзина
   ._icon-shopping-cart:before {
 	content: "\f07a";
   }
+//==сердечко
   ._icon-heart-o:before {
 	content: "\f08a";
   }
+//==трубка телефона
   ._icon-phone:before {
 	content: "\f095";
   }
@@ -69,72 +74,69 @@
   ._icon-facebook:before {
 	content: "\f09a";
   }
-  ._icon-facebook-f:before {
-	content: "\f09a";
-  }
+  //==колокольчик
   ._icon-bell-o:before {
 	content: "\f0a2";
   }
+  //==много людей
   ._icon-group:before {
 	content: "\f0c0";
   }
-  ._icon-users:before {
-	content: "\f0c0";
-  }
+  //==стрелка вниз полная
   ._icon-caret-down:before {
 	content: "\f0d7";
   }
+  //==стрелка вправо полная
   ._icon-caret-up:before {
 	content: "\f0d8";
   }
   ._icon-linkedin:before {
 	content: "\f0e1";
   }
+  //==окошко сообщения
   ._icon-comment-o:before {
 	content: "\f0e5";
   }
+  //==два окошка сообщения
   ._icon-comments-o:before {
 	content: "\f0e6";
   }
-  ._icon-bolt:before {
-	content: "\f0e7";
-  }
+  //==молния
   ._icon-flash:before {
 	content: "\f0e7";
   }
+  //==чемодан
   ._icon-suitcase:before {
 	content: "\f0f2";
   }
+  //==стрелка вправо тонкая
   ._icon-angle-right:before {
 	content: "\f105";
   }
+  //==стрелка вниз тонкая
   ._icon-angle-down:before {
 	content: "\f107";
   }
-  ._icon-mail-reply:before {
-	content: "\f112";
-  }
+  //==стрелка назад
   ._icon-reply:before {
 	content: "\f112";
   }
+  //==смайлик
   ._icon-meh-o:before {
 	content: "\f11a";
   }
+  //==стрелка локация
   ._icon-location-arrow:before {
 	content: "\f124";
   }
   ._icon-cny:before {
 	content: "\f157";
   }
-  ._icon-jpy:before {
-	content: "\f157";
-  }
-  ._icon-rmb:before {
-	content: "\f157";
-  }
+  //==иероглиф
   ._icon-yen:before {
 	content: "\f157";
   }
+  //==меню со стрелкой вниз
   ._icon-sort-amount-desc:before {
 	content: "\f161";
   }
@@ -144,6 +146,7 @@
   ._icon-foursquare:before {
 	content: "\f180";
   }
+  //==ветка
   ._icon-pagelines:before {
 	content: "\f18c";
   }

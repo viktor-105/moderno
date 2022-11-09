@@ -64,6 +64,20 @@ $mobileSmall: em(479.98); // Телефоны S
 	margin-bottom: 30px;
 	text-align: center;
 }
+// иконка для меню
+
+._icon-angle-right {
+	position: relative;
+	padding-left: 15px;
+	&::before {
+		content: '\f105';
+		position: absolute;
+		left: 0;
+		color: $green;
+		font-size: 14px;
+		font-family: icons;
+	}
+}
 
 body {
 	color: $text;
