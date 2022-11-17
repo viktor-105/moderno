@@ -1,12 +1,12 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
 // import { isMobile } from "./functions.js";
 // import { formsModules } from "./forms/forms.js";
-const bascetBox = document.querySelector('.bascet__box');
-
+const btnMenu = document.querySelector('.header__btn-menu');
+const headerBox = document.querySelector('.header__top-box')
 window.addEventListener("load", function (e) {
     
-    bascetBox.addEventListener('click', function () {
-        bascetBox.classList.toggle("active");
+    btnMenu.addEventListener('click', function () {
+        headerBox.classList.toggle("active");
         
     });
 });

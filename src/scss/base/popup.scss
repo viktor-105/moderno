@@ -47,15 +47,118 @@ body.popup-show::after {
 	align-items: center;
 }
 .popup__content {
+	position: relative;
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #eee;
+	background-color: #8bc34a;
 	padding: 20px;
+	max-width: 730px;
 	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
+	height: 487px;
+	padding-top: 80px;
+	padding-bottom: 100px;
 	.lock & {
 		visibility: visible;
+	}
+}
+.popup__close {
+	
+	&::before {
+		position: absolute;
+		content: '\f00d';
+		font-family: 'icons';
+		top: 20px;
+		right: 27px;
+		color: #fff;
+		font-size: 18px;
+	}
+}
+
+.login__title {
+	font-size: 48px;
+	font-family: "Roboto";
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 0.75;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.login__wrapper {
+	form {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	label {
+		position: relative;
+		&::before {
+			position: absolute;
+			font-family: icons;
+			font-size: 14px;
+			color: #fff;
+			left: 18px;
+			top: 16px;
+		}
+	}
+	.login__label-name::before {
+		content: '\f007';
+	}
+	.login__label-pass::before {
+		content: '\f023';
+	}
+	input {
+		height: 43px;
+		margin-bottom: 8px;
+		border: none;
+		background-color: #76ae36;
+		color: #fff;
+		font-size: 14px;
+		padding-left: 40px;
+		display: block;
+		width: 100%;
+		&::placeholder {
+			color: #fff;
+			font-size: 14px;
+		}
+	}
+}
+.login__btn {
+	margin-top: 19px;
+	padding: 18px 0 16px;
+	background-color: #fff;
+	width: 140px;
+	text-transform: uppercase;
+	box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+	margin-right: 10px;
+	font-size: 14px;
+	font-family: "Roboto";
+	color: #000000;
+	font-weight: 700;
+	text-align: center;
+}
+.login__pass {
+	display: block;
+	margin-top: 20px;
+	font-size: 18px;
+	font-family: "Roboto";
+	color: #ffffff;
+}
+.login__creat {
+	display: inline-block;
+	margin-top: 19px;
+	padding: 15px 0 15px 28px;
+	text-align: center;
+	width: 246px;
+	background-color: #76ae36;
+	color: #fff;
+	font-size: 18px;
+	position: relative;
+	&::before {
+		content: '\f044';
+		position: absolute;
+		font-family: 'icons';
+		top: 16px;
+		left: 35px;
 	}
 }
