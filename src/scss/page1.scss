@@ -80,6 +80,32 @@
 		margin-right: 25px;
 		padding-right: 20px;
 		position: relative;
+        &:hover {
+            .user__menu {
+                height: auto;
+                border-width: 1px;
+                padding: 20px;
+                overflow: auto;
+                z-index: 1;
+                li {
+                    margin-bottom: 20px;
+                    @media (max-width: 600px) {
+                        text-align: center;
+                        border-bottom: 1px solid $grey;
+                    }
+                }
+                @media (max-width: 680px) {
+                    top: 70px;
+                }
+                @media (max-width: 600px) {
+                    left: -145px;
+                    width: 217%;
+                }
+                @media (max-width: 415px) {
+                    left: -100px;
+                }
+            }
+        }
 		&::before {
 			content: '\f107';
 			position: absolute;
@@ -89,10 +115,10 @@
 			cursor: pointer;
 			color: #707070;
 		}
-    @media (max-width: 410px) {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
+        @media (max-width: 410px) {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
 	}
     &__top-box {
 		display: flex;
@@ -123,32 +149,7 @@
         padding: 20px 0;
         position: relative;
         display: flex;
-        &:hover {
-            .user__menu {
-                height: auto;
-                border-width: 1px;
-                padding: 20px;
-                overflow: auto;
-                z-index: 1;
-                li {
-                    margin-bottom: 20px;
-                    @media (max-width: 600px) {
-                        text-align: center;
-                        border-bottom: 1px solid $grey;
-                    }
-                }
-                @media (max-width: 680px) {
-                    top: 70px;
-                }
-                @media (max-width: 600px) {
-                    left: -145px;
-                    width: 217%;
-                }
-                @media (max-width: 415px) {
-                    left: -100px;
-                }
-            }
-        }
+        
     }
     &__btn-menu {
         display: none;
@@ -587,5 +588,11 @@ font-size: 16px;
     color: #8bc34a;
     font-weight: bold; 
     }
+}
+.search__title-page {
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: 500;
+    color: #ffffff;
 }
 

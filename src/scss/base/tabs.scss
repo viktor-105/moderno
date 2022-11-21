@@ -2,22 +2,42 @@
 	// .tabs__navigation
 	&__navigation {
 		display: flex;
+		text-align: center;
 	}
 	// .tabs__title
 	&__title {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
-		border-radius: rem(5);
+		width: 100%;
+		background-color: #fff;
+		border: 1px solid #d7d7d7;
+		padding: rem(20) rem(15);
+		font-size: 16px;
+		font-family: "Roboto";
+		font-weight: 500;
+		color: #78909c;
 		&._tab-active {
-			border: 1px solid #000;
+			color: $grey;
+			border-bottom: 3px solid $green;
+		}
+		& + .tabs__title {
+			border-left: 1px solid #d7d7d7;
 		}
 	}
 	// .tabs__content
 	&__content {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
+		background-color: #fff;
+		border: 1px solid #d7d7d7;
+		border-top: none;
+		padding: rem(30) rem(30) rem(50);
 	}
 	// .tabs__body
 	&__body {
+		
+		&-list {
+			font-size: 16px;
+			font-family: "Roboto";
+			color: #707070;
+			line-height: 2.25;
+			column-count: 2;
+		}
 	}
 }

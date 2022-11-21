@@ -2,16 +2,22 @@
 // Снипет (HTML): sel
 .select {
 	position: relative;
+	
+
+
 	// .select__body
 	&__body {
 		position: relative;
-	}
+		width: 82px;
+		height: 27px;
+		border: 1px solid #d5d5d5;
+		}
 	// .select__title
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		
+		
 		cursor: pointer;
 		width: 100%;
 		border-radius: 4px;
@@ -20,22 +26,36 @@
 	&__value {
 		display: flex;
 		align-items: center;
-		height: 30px;
-		padding: 0px 15px;
+		
+		
+		padding: 3px 10px;
 		justify-content: space-between;
 		flex-direction: row-reverse;
+		
 		&:before {
-			content: "";
+			content: "\f0d7";
+			font-family: icons;
+			color: $green;
+			font-size: 13px;
 			align-self: stretch;
 			flex: 0 0 10px;
 			transition: all 0.3s ease 0s;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			padding-left: 9px;
+			margin-top: 5px;
 			._select-open & {
-				transform: rotate(-180deg);
+				transform: rotateX(180deg);
+				margin-top: 5px;
+				
 			}
 		}
+	}
+	&__content {
+		font-size: 13px;
+		font-family: "Roboto";
+		color: #70838d;
 	}
 	// .select__text
 	&__text {
@@ -48,8 +68,10 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
 		position: absolute;
+		font-size: 13px;
+		font-family: "Roboto";
+		color: #70838d;
 		top: 29px;
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
