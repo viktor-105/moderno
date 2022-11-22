@@ -1,3 +1,29 @@
+.user__menu {
+    border: 0 solid #cccccc;
+    background-color: #ffffff;
+    // box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
+    position: absolute;
+    padding: 0 20px;
+    width: 158px;
+    top: 82px;
+    left: 20px;
+    transition: all .3s;
+    height: 0px;
+    overflow: hidden;
+    a {
+        display: inline-block;
+        font-size: 12px;
+        color: #546e7a;
+        margin-bottom: 15px;
+    }
+    @media (max-width: 320px) {
+        width: 250px;
+        top: 70px;
+        left: -102px;
+        z-index: 5;
+    }
+} 
+
 .header {
     @media (max-width: 680px) {
 
@@ -70,9 +96,9 @@
 		span {
 			background-color: #95c85a;
 		}
-    @media (max-width: 410px) {
-        margin-right: 10px;
-    }   
+        @media (max-width: 410px) {
+            margin-right: 10px;
+        }   
 	}
     &__top-user {
 		display: flex;
@@ -80,32 +106,7 @@
 		margin-right: 25px;
 		padding-right: 20px;
 		position: relative;
-        &:hover {
-            .user__menu {
-                height: auto;
-                border-width: 1px;
-                padding: 20px;
-                overflow: auto;
-                z-index: 1;
-                li {
-                    margin-bottom: 20px;
-                    @media (max-width: 600px) {
-                        text-align: center;
-                        border-bottom: 1px solid $grey;
-                    }
-                }
-                @media (max-width: 680px) {
-                    top: 70px;
-                }
-                @media (max-width: 600px) {
-                    left: -145px;
-                    width: 217%;
-                }
-                @media (max-width: 415px) {
-                    left: -100px;
-                }
-            }
-        }
+        
 		&::before {
 			content: '\f107';
 			position: absolute;
@@ -149,7 +150,32 @@
         padding: 20px 0;
         position: relative;
         display: flex;
-        
+        &:hover {
+            .user__menu {
+                height: auto;
+                border-width: 1px;
+                padding: 20px;
+                overflow: auto;
+                z-index: 1;
+                li {
+                    margin-bottom: 20px;
+                    @media (max-width: 600px) {
+                        text-align: center;
+                        border-bottom: 1px solid $grey;
+                    }
+                }
+                @media (max-width: 680px) {
+                    top: 70px;
+                }
+                @media (max-width: 600px) {
+                    left: -145px;
+                    width: 217%;
+                }
+                @media (max-width: 415px) {
+                    left: -100px;
+                }
+            }
+        }
     }
     &__btn-menu {
         display: none;
@@ -179,31 +205,7 @@
         }
     }
      // ====Выпадающее меню пользователя
-    .user__menu {
-        border: 0 solid #cccccc;
-        background-color: #ffffff;
-        // box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
-        position: absolute;
-        padding: 0 20px;
-        width: 158px;
-        top: 82px;
-        left: 20px;
-        transition: all .3s;
-        height: 0px;
-        overflow: hidden;
-        a {
-            display: inline-block;
-            font-size: 12px;
-            color: #546e7a;
-            margin-bottom: 15px;
-        }
-        @media (max-width: 320px) {
-            width: 250px;
-            top: 70px;
-            left: -102px;
-            z-index: 5;
-        }
-    } 
+    
     &-bottom {
         @media (max-width: 900px) {
             padding-top: 20px;
