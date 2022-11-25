@@ -36,25 +36,46 @@
         </div>
 
         <div class="page__choice">
-            <div class="page__categories">Categories</div>
-            <div class="page__price">Price Range</div>
+            <div class="page__categories">
+                <button class="categories__link">Categories</button>
+                <!-- =======ВЫПАДАЮЩЕЕ МЕНЮ КАТЕГОРИИ ================================== -->
+			    <div class="page__categories-menu">
+                    <ul class="page__categories-list">
+                        <li class="page__categories-link angle__right"><a href="#">WordPress</a></li>
+                        <li class="page__categories-link angle__right"><a href="#">Joomla<span></span></a></li>
+                        <li class="page__categories-link angle__right"><a href="#">PSD<span></span></a></li>
+                        <li class="page__categories-link angle__right"><a href="#">Plugins<span></span></a></li>
+                        <li class="page__categories-link angle__right"><a href="#">Components<span></span></a></li>
+                    </ul>
+                    <ul class="page__categories-num">
+                        <li>(150)</li>
+                        <li>(100)</li>
+                        <li>(50)</li>
+                        <li>(60)</li>
+                        <li>(40)</li>
+                    </ul>
+			    </div>
+            </div>
+            <div class="page__price">
+                Price Range
+                <div class="page__price-menu">
+                    <ul class="page__price-list">
+                        <li class="page__price-link angle__right"><a href="#">WordPress</a></li>
+                        <li class="page__price-link angle__right"><a href="#">Joomla<span></span></a></li>
+                        <li class="page__price-link angle__right"><a href="#">PSD<span></span></a></li>
+                        <li class="page__price-link angle__right"><a href="#">Plugins<span></span></a></li>
+                        <li class="page__price-link angle__right"><a href="#">Components<span></span></a></li>
+                    </ul>
+			    </div>
+            </div>
             <div class="page__sort">
                 Sort by: New Items
                 <div class="page__sort-nule"></div>
             </div>
-            <div class="page__menu"></div>
-
-<!-- =======ВЫПАДАЮЩЕЕ МЕНЮ КАТЕГОРИИ ================================== -->
-			<div class="page__categories-menu">
-				<ul class="page__categories-list">
-					<li class="page__categories-link angle__right"><a href="#">WordPress</a></li>
-					<li class="page__categories-link angle__right"><a href="#">Joomla</a></li>
-					<li class="page__categories-link angle__right"><a href="#">PSD</a></li>
-					<li class="page__categories-link angle__right"><a href="#">Plugins</a></li>
-					<li class="page__categories-link angle__right"><a href="#">Components</a></li>
-				</ul>
-			</div>
-
+            <div class="page__menu">
+                <a class="page__menu-mini page__menu-active" href="#"></a>
+                <a class="page__menu-maxi" href="#"></a>
+            </div>
         </div>
 
         <div class="page__description">
@@ -96,6 +117,7 @@
                                         <input type="radio" class="rating__item" value="5" name="rating">
                                     </div>
                                 </div>
+                                
                                 <div class="rating__value pleasure__rating-value">5</div>
                             </div>
                             <div class="pleasure__message">
